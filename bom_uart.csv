@@ -1,0 +1,11 @@
+Part,Description,Quantity,Manufacturer,Part Number,Datasheet,Price (EGP),Total Price (EGP),,Total
+Arduino Uno,Arduino Uno Rev3,1,Arduino,A000066,https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf,420,420,,618.75
+Arduino Uno cable,usb type A to usb type B,1,Arduino,,,30,30,,
+LED,10mm,2,,,,3.5,7,,
+Breadboard,830 pin,1,,,,35,35,,
+Push button,4 pin,3,,,,0.75,2.25,,
+Resistor,220 ohm,5,,,,1.75,8.75,,
+Jumper wires,male to male,27,,,,0.75,20.25,,
+LDR sensor,150V/200mW,1,,,,20,20,,
+potintiometer,B1K,1,,,,5.5,5.5,,
+LCD,16 pin,1,,,,70,70,,
