@@ -1,0 +1,13 @@
+Part,Description,Quantity,Manufacturer,Part Number,Datasheet,Price (EGP),Total Price (EGP),,Total
+Microcontroller IC,ATmega328P-PU(DIP-28),1,Atmel,ATmega328P,https://www.atmel.com/images/doc8161.pdf,215,215,,350.7
+Decoupling Capacitor,100nF,1,,,,1,1,,
+LED,10mm,2,,,,3.5,7,,
+Resistor,"220 Ohm, 0.25W",2,,,,1.75,3.5,,
+Push button,4 pin,3,,,,0.75,2.25,,
+Jumper Wires,Male-to-Male,27,,,,0.75,20.25,,
+Crystal Oscillator,16MHz,1,,,,5,5,,
+Ceramic Capacitors,22pF,2,,,,0.5,1,,
+Pull-up Resistor,10kohm,1,,,,0.2,0.2,,
+LDR sensor,150V/200mW,1,,,,20,20,,
+potintiometer,B1K,1,,,,5.5,5.5,,
+LCD,16 pin,1,,,,70,70,,
