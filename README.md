@@ -20,7 +20,7 @@ The LMC reads ambient light through a Light-Dependent Resistor (LDR) connected t
  
 ```mermaid
 graph TD
-    %% Define Node Shapes and Names
+    %% Main Architecture Elements
     HMI["Human Machine Interface (HMI)"]
     Human["Human.ino"]
     Uart["Uart.ino / .h"]
@@ -31,7 +31,7 @@ graph TD
     Button["Button.ino / .h"]
     myString["myString.ino / .h"]
 
-    %% Hierarchical Tree Structure
+    %% Direct Structural Hierarchy
     HMI --> Human
     Human --> Uart
     Human --> Dio
@@ -41,26 +41,25 @@ graph TD
     Human --> Button
     Human --> myString
 
-    %% Standalone Notes Aligned Right
-    Human --- Note1["Note: Top-level integration file"]
-    Uart --- Note2["Note: UART communication logic"]
-    Dio --- Note3["Note: Digital input/output handling"]
-    Adc --- Note4["Note: ADC driver for LDR readings"]
-    Lcd --- Note5["Note: LCD display driver"]
-    Led --- Note6["Note: LED (alarm + PWM brightness) control"]
-    Button --- Note7["Note: Debounced button input handling"]
-    myString --- Note8["Note: Custom string manipulation utilities"]
+    %% Side Alignment Documentation Boxes
+    Note1["Note: Top-level integration file"]
+    Note2["Note: UART communication logic"]
+    Note3["Note: Digital input/output handling"]
+    Note4["Note: ADC driver for LDR readings"]
+    Note5["Note: LCD display driver"]
+    Note6["Note: LED (alarm + PWM brightness) control"]
+    Note7["Note: Debounced button input handling"]
+    Note8["Note: Custom string manipulation utilities"]
 
-    %% Optional Styling for Neatness
-    style Note1 fill:#fff8db,stroke:#eed582,stroke-width:1px
-    style Note2 fill:#fff8db,stroke:#eed582,stroke-width:1px
-    style Note3 fill:#fff8db,stroke:#eed582,stroke-width:1px
-    style Note4 fill:#fff8db,stroke:#eed582,stroke-width:1px
-    style Note5 fill:#fff8db,stroke:#eed582,stroke-width:1px
-    style Note6 fill:#fff8db,stroke:#eed582,stroke-width:1px
-    style Note7 fill:#fff8db,stroke:#eed582,stroke-width:1px
-    style Note8 fill:#fff8db,stroke:#eed582,stroke-width:1px
- 
+    %% Link the notes to the boxes cleanly
+    Human --- Note1
+    Uart --- Note2
+    Dio --- Note3
+    Adc --- Note4
+    Lcd --- Note5
+    Led --- Note6
+    Button --- Note7
+    myString --- Note8
 
  
 ## Hardware Setup
