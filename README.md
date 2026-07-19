@@ -18,17 +18,48 @@ The LMC reads ambient light through a Light-Dependent Resistor (LDR) connected t
 - **Modular firmware architecture** split into independent driver modules (ADC, DIO, LED, LCD, UART, Button, String)
 ## System Architecture
  
-@startwbs
-* Human Machine Interface (HMI)
-** Human.ino (Integration Layer)
-*** Uart.h / Uart.ino (UART Transmit/Receive Framing)
-*** Dio.h / Dio.ino (Digital I/O Control)
-*** Adc.h / Adc.ino (ADC Setup and LDR Reading)
-*** Lcd.h / Lcd.ino (4-bit LCD Driver)
-*** Led.h / Led.ino (Alarm LED and PWM Brightness LED Control)
-*** Button.h / Button.ino (Debounced Push-Button Handling)
-*** myString.h / myString.ino (Custom String Manipulation Utilities)
-@endwbs
+```mermaid
+graph TD
+    %% Define Node Shapes and Names
+    HMI["Human Machine Interface (HMI)"]
+    Human["Human.ino"]
+    Uart["Uart.ino / .h"]
+    Dio["Dio.ino / .h"]
+    Adc["Adc.ino / .h"]
+    Lcd["Lcd.ino / .h"]
+    Led["Led.ino / .h"]
+    Button["Button.ino / .h"]
+    myString["myString.ino / .h"]
+
+    %% Hierarchical Tree Structure
+    HMI --> Human
+    Human --> Uart
+    Human --> Dio
+    Human --> Adc
+    Human --> Lcd
+    Human --> Led
+    Human --> Button
+    Human --> myString
+
+    %% Standalone Notes Aligned Right
+    Human --- Note1["Note: Top-level integration file"]
+    Uart --- Note2["Note: UART communication logic"]
+    Dio --- Note3["Note: Digital input/output handling"]
+    Adc --- Note4["Note: ADC driver for LDR readings"]
+    Lcd --- Note5["Note: LCD display driver"]
+    Led --- Note6["Note: LED (alarm + PWM brightness) control"]
+    Button --- Note7["Note: Debounced button input handling"]
+    myString --- Note8["Note: Custom string manipulation utilities"]
+
+    %% Optional Styling for Neatness
+    style Note1 fill:#fff8db,stroke:#eed582,stroke-width:1px
+    style Note2 fill:#fff8db,stroke:#eed582,stroke-width:1px
+    style Note3 fill:#fff8db,stroke:#eed582,stroke-width:1px
+    style Note4 fill:#fff8db,stroke:#eed582,stroke-width:1px
+    style Note5 fill:#fff8db,stroke:#eed582,stroke-width:1px
+    style Note6 fill:#fff8db,stroke:#eed582,stroke-width:1px
+    style Note7 fill:#fff8db,stroke:#eed582,stroke-width:1px
+    style Note8 fill:#fff8db,stroke:#eed582,stroke-width:1px
  
 
  
