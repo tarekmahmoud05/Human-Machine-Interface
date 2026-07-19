@@ -41,25 +41,23 @@ graph LR
     Human --> Button
     Human --> myString
 
-    %% Side Alignment Documentation Boxes
-    Note1["Note: Integration layer"]
-    Note2["Note: UART transmit/receive framing"]
-    Note3["Note: Digital I/O control"]
-    Note4["Note: ADC setup and LDR reading"]
-    Note5["Note: 4-bit LCD driver"]
-    Note6["Note: Alarm LED and PWM brightness LED control"]
-    Note7["Note: Debounced push-button handling"]
-    Note8["Note: Custom string manipulation utilities"]
+    %% Side Alignment Documentation Boxes (Re-indexed from 1)
+    Note1["Note: UART transmit/receive framing"]
+    Note2["Note: Digital I/O control"]
+    Note3["Note: ADC setup and LDR reading"]
+    Note4["Note: 4-bit LCD driver"]
+    Note5["Note: Alarm LED and PWM brightness LED control"]
+    Note6["Note: Debounced push-button handling"]
+    Note7["Note: Custom string manipulation utilities"]
 
     %% Link the notes to the boxes cleanly
-    Human --- Note1
-    Uart --- Note2
-    Dio --- Note3
-    Adc --- Note4
-    Lcd --- Note5
-    Led --- Note6
-    Button --- Note7
-    myString --- Note8
+    Uart --- Note1
+    Dio --- Note2
+    Adc --- Note3
+    Lcd --- Note4
+    Led --- Note5
+    Button --- Note6
+    myString --- Note7
 ```
  
 ## Hardware Setup
