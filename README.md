@@ -19,19 +19,19 @@ The LMC reads ambient light through a Light-Dependent Resistor (LDR) connected t
 ## System Architecture
  
 ```mermaid
-graph TD
+graph LR
     %% Main Architecture Elements
     HMI["Human Machine Interface (HMI)"]
     Human["Human.ino"]
-    Uart["Uart.ino / .h"]
-    Dio["Dio.ino / .h"]
-    Adc["Adc.ino / .h"]
-    Lcd["Lcd.ino / .h"]
-    Led["Led.ino / .h"]
-    Button["Button.ino / .h"]
-    myString["myString.ino / .h"]
+    Uart["Uart.h / Uart.ino"]
+    Dio["Dio.h / Dio.ino"]
+    Adc["Adc.h / Adc.ino"]
+    Lcd["Lcd.h / Lcd.ino"]
+    Led["Led.h / Led.ino"]
+    Button["Button.h / Button.ino"]
+    myString["myString.h / myString.ino"]
 
-    %% Direct Structural Hierarchy
+    %% Direct Structural Hierarchy (Left-to-Right layout)
     HMI --> Human
     Human --> Uart
     Human --> Dio
@@ -42,13 +42,13 @@ graph TD
     Human --> myString
 
     %% Side Alignment Documentation Boxes
-    Note1["Note: Top-level integration file"]
-    Note2["Note: UART communication logic"]
-    Note3["Note: Digital input/output handling"]
-    Note4["Note: ADC driver for LDR readings"]
-    Note5["Note: LCD display driver"]
-    Note6["Note: LED (alarm + PWM brightness) control"]
-    Note7["Note: Debounced button input handling"]
+    Note1["Note: Integration layer"]
+    Note2["Note: UART transmit/receive framing"]
+    Note3["Note: Digital I/O control"]
+    Note4["Note: ADC setup and LDR reading"]
+    Note5["Note: 4-bit LCD driver"]
+    Note6["Note: Alarm LED and PWM brightness LED control"]
+    Note7["Note: Debounced push-button handling"]
     Note8["Note: Custom string manipulation utilities"]
 
     %% Link the notes to the boxes cleanly
@@ -109,49 +109,49 @@ graph TD
 - Hand gesture control requires a PC with a webcam and cannot be used through the Arduino IDE alone
 ## Repository Structure
  
-@startuml
-left to right direction
-skinparam LookAndFeel modern
+```mermaid
+graph LR
+    %% Main Architecture Elements
+    HMI["Human Machine Interface (HMI)"]
+    Human["Human.ino"]
+    Uart["Uart.ino / .h"]
+    Dio["Dio.ino / .h"]
+    Adc["Adc.ino / .h"]
+    Lcd["Lcd.ino / .h"]
+    Led["Led.ino / .h"]
+    Button["Button.ino / .h"]
+    myString["myString.ino / .h"]
 
-map "Human Machine Interface (HMI)" as HMI {
-}
+    %% Direct Structural Hierarchy (Flows Left-to-Right for Vertical Tree look)
+    HMI --> Human
+    Human --> Uart
+    Human --> Dio
+    Human --> Adc
+    Human --> Lcd
+    Human --> Led
+    Human --> Button
+    Human --> myString
 
-map "Human.ino" as Human {
-}
+    %% Side Alignment Documentation Boxes
+    Note1["Note: Top-level integration file"]
+    Note2["Note: UART communication logic"]
+    Note3["Note: Digital input/output handling"]
+    Note4["Note: ADC driver for LDR readings"]
+    Note5["Note: LCD display driver"]
+    Note6["Note: LED (alarm + PWM brightness) control"]
+    Note7["Note: Debounced button input handling"]
+    Note8["Note: Custom string manipulation utilities"]
 
-map "Uart.ino / .h" as Uart {
-}
-map "Dio.ino / .h" as Dio {
-}
-map "Adc.ino / .h" as Adc {
-}
-map "Lcd.ino / .h" as Lcd {
-}
-map "Led.ino / .h" as Led {
-}
-map "Button.ino / .h" as Button {
-}
-map "myString.ino / .h" as myString {
-}
-
-HMI --> Human
-Human --> Uart
-Human --> Dio
-Human --> Adc
-Human --> Lcd
-Human --> Led
-Human --> Button
-Human --> myString
-
-note right of Human : Top-level integration file
-note right of Uart : UART communication logic
-note right of Dio : Digital input/output handling
-note right of Adc : ADC driver for LDR readings
-note right of Lcd : LCD display driver
-note right of Led : LED (alarm + PWM brightness) control
-note right of Button : Debounced button input handling
-note right of myString : Custom string manipulation utilities
-@enduml
+    %% Link the notes directly to the right side of the boxes
+    Human --- Note1
+    Uart --- Note2
+    Dio --- Note3
+    Adc --- Note4
+    Lcd --- Note5
+    Led --- Note6
+    Button --- Note7
+    myString --- Note8
+```
  
 ## Getting Started
  
