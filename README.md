@@ -60,7 +60,7 @@ graph TD
     Led --- Note6
     Button --- Note7
     myString --- Note8
-
+```
  
 ## Hardware Setup
  
